@@ -1,0 +1,318 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* IRANSansX Web Fonts */
+@font-face {
+  font-family: 'IRANSansX';
+  src: local('IRANSansX'),
+       url('/fonts/IRANSansX-Regular.woff2') format('woff2'),
+       url('/fonts/IRANSansX-Regular.woff') format('woff');
+  font-weight: 100 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IRANSansX';
+  src: local('IRANSansX Bold'),
+       url('/fonts/IRANSansX-Bold.woff2') format('woff2'),
+       url('/fonts/IRANSansX-Bold.woff') format('woff');
+  font-weight: 600 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Auto-apply IRANSansX when Persian (RTL) mode is active */
+[dir="rtl"] {
+  font-family: 'IRANSansX', 'Vazirmatn', system-ui, -apple-system, sans-serif !important;
+}
+
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6,
+[dir="rtl"] .font-display,
+[dir="rtl"] .font-sans {
+  font-family: 'IRANSansX', 'Vazirmatn', system-ui, -apple-system, sans-serif !important;
+}
+
+@layer base {
+  :root {
+    /* Default Accent: Mint Green matching requested design */
+    --brand-50: #ecfdf5;
+    --brand-100: #d1fae5;
+    --brand-200: #a7f3d0;
+    --brand-300: #6ee7b7;
+    --brand-400: #48e59b;
+    --brand-500: #56e39f;
+    --brand-600: #10b981;
+    --brand-700: #059669;
+    --brand-800: #047857;
+    --brand-900: #064e3b;
+    --brand-950: #022c22;
+    --brand-glow: rgba(86, 227, 159, 0.45);
+  }
+
+  /* Dynamic color theme classes */
+  [data-accent="mint"] {
+    --brand-50: #ecfdf5;
+    --brand-100: #d1fae5;
+    --brand-200: #a7f3d0;
+    --brand-300: #6ee7b7;
+    --brand-400: #48e59b;
+    --brand-500: #56e39f;
+    --brand-600: #10b981;
+    --brand-700: #059669;
+    --brand-800: #047857;
+    --brand-900: #064e3b;
+    --brand-950: #022c22;
+    --brand-glow: rgba(86, 227, 159, 0.45);
+  }
+
+  [data-accent="blue"] {
+    --brand-50: #eff6ff;
+    --brand-100: #dbeafe;
+    --brand-200: #bfdbfe;
+    --brand-300: #93c5fd;
+    --brand-400: #60a5fa;
+    --brand-500: #3b82f6;
+    --brand-600: #2563eb;
+    --brand-700: #1d4ed8;
+    --brand-800: #1e40af;
+    --brand-900: #1e3a8a;
+    --brand-950: #172554;
+    --brand-glow: rgba(59, 130, 246, 0.35);
+  }
+
+  [data-accent="cyan"] {
+    --brand-50: #ecfeff;
+    --brand-100: #cffafe;
+    --brand-200: #a5f3fc;
+    --brand-300: #67e8f9;
+    --brand-400: #22d3ee;
+    --brand-500: #06b6d4;
+    --brand-600: #0891b2;
+    --brand-700: #0e7490;
+    --brand-800: #155e75;
+    --brand-900: #164e63;
+    --brand-950: #083344;
+    --brand-glow: rgba(6, 182, 212, 0.35);
+  }
+
+  [data-accent="emerald"] {
+    --brand-50: #ecfdf5;
+    --brand-100: #d1fae5;
+    --brand-200: #a7f3d0;
+    --brand-300: #6ee7b7;
+    --brand-400: #34d399;
+    --brand-500: #10b981;
+    --brand-600: #059669;
+    --brand-700: #047857;
+    --brand-800: #065f46;
+    --brand-900: #064e3b;
+    --brand-950: #022c22;
+    --brand-glow: rgba(16, 185, 129, 0.35);
+  }
+
+  [data-accent="violet"] {
+    --brand-50: #f5f3ff;
+    --brand-100: #ede9fe;
+    --brand-200: #ddd6fe;
+    --brand-300: #c4b5fd;
+    --brand-400: #a78bfa;
+    --brand-500: #8b5cf6;
+    --brand-600: #7c3aed;
+    --brand-700: #6d28d9;
+    --brand-800: #5b21b6;
+    --brand-900: #4c1d95;
+    --brand-950: #2e1065;
+    --brand-glow: rgba(139, 92, 246, 0.35);
+  }
+
+  [data-accent="rose"] {
+    --brand-50: #fff1f2;
+    --brand-100: #ffe4e6;
+    --brand-200: #fecdd3;
+    --brand-300: #fda4af;
+    --brand-400: #fb7185;
+    --brand-500: #f43f5e;
+    --brand-600: #e11d48;
+    --brand-700: #be123c;
+    --brand-800: #9f1239;
+    --brand-900: #881337;
+    --brand-950: #4c0519;
+    --brand-glow: rgba(244, 63, 94, 0.35);
+  }
+
+  [data-accent="amber"] {
+    --brand-50: #fffbeb;
+    --brand-100: #fef3c7;
+    --brand-200: #fde68a;
+    --brand-300: #fcd34d;
+    --brand-400: #fbbf24;
+    --brand-500: #f59e0b;
+    --brand-600: #d97706;
+    --brand-700: #b45309;
+    --brand-800: #92400e;
+    --brand-900: #78350f;
+    --brand-950: #451a03;
+    --brand-glow: rgba(245, 158, 11, 0.35);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom Glassmorphism & Utilities */
+.glass-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.dark .glass-card {
+  background: rgba(19, 23, 29, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.dark .glass-nav {
+  background: rgba(13, 16, 20, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glow-effect {
+  box-shadow: 0 0 35px -5px var(--brand-glow);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Smooth organic floating animations for hero photo badges */
+@keyframes smoothFloat1 {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-13px);
+  }
+}
+
+@keyframes smoothFloat2 {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+@keyframes smoothFloat3 {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes smoothFloat4 {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes smoothFloat5 {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-11px);
+  }
+}
+
+.animate-float-smooth-1 {
+  animation: smoothFloat1 4.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-float-smooth-2 {
+  animation: smoothFloat2 5.5s ease-in-out infinite 0.8s;
+  will-change: transform;
+}
+
+.animate-float-smooth-3 {
+  animation: smoothFloat3 4.8s ease-in-out infinite 0.4s;
+  will-change: transform;
+}
+
+.animate-float-smooth-4 {
+  animation: smoothFloat4 5.8s ease-in-out infinite 1.6s;
+  will-change: transform;
+}
+
+.animate-float-smooth-5 {
+  animation: smoothFloat5 4.2s ease-in-out infinite 1.1s;
+  will-change: transform;
+}
+
+/* Print Stylesheet for ATS Resume */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .page-break {
+    page-break-after: always;
+  }
+}
