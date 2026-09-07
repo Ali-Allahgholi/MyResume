@@ -1,23 +1,15 @@
 export const translations = {
   en: {
     nav: {
-      home: 'Home',
       about: 'About',
-      skills: 'Skills',
       experience: 'Experience',
       projects: 'Projects',
-      education: 'Education',
       contact: 'Contact',
       themeLight: 'Switch to Light Mode',
       themeDark: 'Switch to Dark Mode',
       langTitle: 'تغییر به زبان فارسی',
     },
     hero: {
-      greeting: "HI, I'M A",
-      role: "FRONTEND",
-      developer: "DEVELOPER",
-      codeSnippetStart: "<I BUILD FAST, RESPONSIVE, AND USER-FRIENDLY WEB INTERFACES USING MODERN FRONTEND TECHNOLOGIES. MY MAIN TOOLS OF CHOICE ARE",
-      codeSnippetEnd: "AND MODERN CSS FRAMEWORKS. />",
       resumeBtn: "My Resume",
       contactBtn: "Get in Touch",
       projectsBtn: "View Projects",
@@ -26,71 +18,20 @@ export const translations = {
       badge: "About Me",
       heading: "Engineering with Passion, Precision & Purpose",
       subheading: "A closer look into my professional background, engineering principles, and core philosophies.",
-      summaryTitle: "Professional Summary",
-      location: "Location:",
-      downloadCv: "Download Full CV (PDF)",
-      languages: "Languages Spoken",
-      interests: "Interests & Passions",
-      pillars: [
-        {
-          title: "Performance First",
-          desc: "Optimizing critical rendering paths, tree shaking, edge rendering, and sub-second page loads."
-        },
-        {
-          title: "Clean & Tested Code",
-          desc: "Architecting strongly-typed TypeScript modules with robust unit and end-to-end coverage."
-        },
-        {
-          title: "Delightful UX & Design",
-          desc: "Crafting fluid animations, accessible micro-interactions, and design systems with precision."
-        },
-        {
-          title: "End-to-End Ownership",
-          desc: "From database schema design to automated cloud CI/CD deployment pipelines and monitoring."
-        }
-      ]
     },
     skills: {
-      badge: "Tech Stack & Proficiencies",
-      heading: "Skills Matrix & Technologies",
-      subheading: "Battle-tested frameworks, languages, cloud platforms, and architecture patterns.",
-      searchPlaceholder: "Search skills or technologies...",
-      tabs: {
-        all: "All Tech Stack",
-        frontend: "Frontend",
-        backend: "Backend & DB",
-        tools: "Cloud & Tools",
-        soft: "Leadership & Soft Skills",
-      },
+      badge: "Skills & Technologies",
     },
     experience: {
       badge: "Career History",
       heading: "Work Experience & Track Record",
       subheading: "High-impact leadership roles, architecture decisions, and successful product milestones.",
       keyAchievements: "Key Achievements:",
-      technologies: "Technologies:",
     },
     projects: {
       badge: "Featured Portfolio",
       heading: "Projects",
-      allCategories: "All",
-      categories: {
-        all: "All",
-        frontend: "Frontend",
-        fullstack: "Full Stack",
-        uiux: "UI/UX",
-      },
-      liveDemo: "Live Demo",
-      viewCode: "Source Code",
-      keyHighlights: "Key Highlights",
-    },
-    education: {
-      badge: "Credentials & Accreditations",
-      heading: "Education",
-      academicTitle: "Academic Education",
-      certificationsTitle: "Licenses & Certifications",
-      testimonialsTitle: "Client & Colleague Endorsements",
-      credentialId: "Credential ID:",
+      subheading: "",
     },
     contact: {
       badge: "Get in Touch",
@@ -105,8 +46,6 @@ export const translations = {
       openTelegram: "Open Telegram",
       viewProfile: "View Profile",
       viewGithub: "View Repositories",
-      remoteAvailable: "Open to Remote & On-site",
-      copied: "Copied to clipboard!",
       copy: "Copy",
       sendDirect: "Send a Direct Message",
       sendDirectSub: "Fill out the form below and I will get back to you promptly.",
@@ -122,29 +61,22 @@ export const translations = {
       successMsg: "Your message was sent successfully! I will respond promptly.",
     },
     footer: {
+      builtWith: "Built with React & Tailwind CSS",
       backToTop: "Back to top",
       allRights: "All rights reserved.",
     },
   },
   fa: {
     nav: {
-      home: 'خانه',
       about: 'درباره من',
-      skills: 'مهارت‌ها',
       experience: 'سوابق شغلی',
       projects: 'پروژه‌ها',
-      education: 'تحصیلات',
       contact: 'تماس',
       themeLight: 'تغییر به حالت روشن',
       themeDark: 'تغییر به حالت تاریک',
       langTitle: 'Switch to English',
     },
     hero: {
-      greeting: "سلام، من یک توسعه‌دهنده",
-      role: "فرانت‌اند",
-      developer: "هستم",
-      codeSnippetStart: "<من رابط‌های کاربری سریع، واکنش‌گرا و کاربرپسند را با فناوری‌های مدرن فرانت‌اند پیاده‌سازی می‌کنم. ابزارهای اصلی من",
-      codeSnippetEnd: "و فریم‌ورک‌های نوین CSS هستند. />",
       resumeBtn: "دریافت رزومه",
       contactBtn: "ارتباط با من",
       projectsBtn: "مشاهده پروژه‌ها",
@@ -153,72 +85,20 @@ export const translations = {
       badge: "درباره من",
       heading: "مهندسی نرم‌افزار با اشتیاق، دقت و هدفمندی",
       subheading: "نگاهی عمیق‌تر به پیشینه حرفه‌ای، اصول مهندسی و ارزش‌های کاری من.",
-      summaryTitle: "خلاصه سوابق حرفه‌ای",
-      location: "محل سکونت:",
-      downloadCv: "دریافت فایل PDF رزومه",
-      languages: "زبان‌های مسلط",
-      interests: "علاقه‌مندی‌ها و سرگرمی‌ها",
-      pillars: [
-        {
-          title: "تمرکز بر سرعت و پرفورمنس",
-          desc: "بهینه‌سازی Critical Rendering Path، حجم باندل‌ها و کاهش زمان لود صفحات به زیر ۱ ثانیه."
-        },
-        {
-          title: "کد تمیز و تست‌شده",
-          desc: "معماری ماژولار با TypeScript، کدنویسی اصولی و پوشش تست‌های واحد و End-to-End."
-        },
-        {
-          title: "طراحی جذاب و تجربه کاربری بی‌نقص",
-          desc: "خلق انیمیشن‌های روان، میکرواینتراکشن‌های دسترس‌پذیر و سیستم‌های دیزاین منسجم."
-        },
-        {
-          title: "مالکیت فرآیند از ابتدا تا انتها",
-          desc: "از طراحی ساختار کامپوننت‌ها تا استقرار خودکار CI/CD روی سرویس‌های ابری و مانیتورینگ."
-        }
-      ]
     },
     skills: {
-      badge: "استک فنی و توانمندی‌ها",
-      heading: "ماتریس مهارت‌ها و فناوری‌ها",
-      subheading: "فریم‌ورک‌ها، زبان‌های برنامه‌نویسی و ابزارهایی که با آن‌ها پروژه‌های عملی پیاده کرده‌ام.",
-      searchPlaceholder: "جستجوی مهارت یا تکنولوژی...",
-      tabs: {
-        all: "همه مهارت‌ها",
-        frontend: "فرانت‌اند",
-        backend: "بک‌اند و دیتابیس",
-        tools: "ابزارها و کلود",
-        soft: "مهارت‌های فردی و رهبری",
-      },
+      badge: "مهارت‌های تخصصی",
     },
     experience: {
       badge: "سوابق شغلی",
       heading: "تجربیات کاری و دستاوردها",
       subheading: "نقش‌های کلیدی، تصمیمات فنی و پروژه‌های موفقی که تحویل داده‌ام.",
       keyAchievements: "دستاوردهای کلیدی:",
-      technologies: "فناوری‌ها:",
     },
     projects: {
       badge: "نمونه‌کارها و پروژه‌ها",
       heading: "پروژه‌ها ",
       subheading: "",
-      allCategories: "همه",
-      categories: {
-        all: "همه",
-        frontend: "فرانت‌اند",
-        fullstack: "فول‌استک",
-        uiux: "طراحی UI/UX",
-      },
-      liveDemo: "مشاهده آنلاین",
-      viewCode: "سورس کد",
-      keyHighlights: "ویژگی‌های شاخص",
-    },
-    education: {
-      badge: "مدارک و افتخارات",
-      heading: "تحصیلات ",
-      academicTitle: "تحصیلات دانشگاهی",
-      certificationsTitle: "مدارک و گواهینامه‌های تخصصی",
-      testimonialsTitle: "توصیه‌نامه‌ها و نظرات همکاران",
-      credentialId: "شناسه گواهینامه:",
     },
     contact: {
       badge: "ارتباط با من",
@@ -233,8 +113,6 @@ export const translations = {
       openTelegram: "ارسال پیام در تلگرام",
       viewProfile: "مشاهده پروفایل",
       viewGithub: "مشاهده گیت‌هاب",
-      remoteAvailable: "آماده برای همکاری حضوری و دورکاری",
-      copied: "کپی شد!",
       copy: "کپی",
       sendDirect: "ارسال پیام مستقیم",
       sendDirectSub: "فرم زیر را تکمیل کنید، در سریع‌ترین زمان ممکن پاسخ خواهم داد.",
@@ -250,8 +128,9 @@ export const translations = {
       successMsg: "پیام شما با موفقیت ارسال شد! در اسرع وقت پاسخ خواهم داد.",
     },
     footer: {
+      builtWith: "توسعه‌یافته با React و Tailwind CSS",
       backToTop: "بازگشت به بالا",
-      allRights: "All Rights Reserved",
+      allRights: "تمامی حقوق محفوظ است.",
     },
   },
 };

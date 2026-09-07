@@ -5,11 +5,7 @@ import {
   Send,
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
-import { Terminal, TypingAnimation, AnimatedSpan } from './magicui/terminal';
-
-function FloatingBackgroundIcons() {
-  return null;
-}
+import { Terminal, TypingAnimation } from './magicui/terminal';
 
 export default function Hero() {
   const { cvData, t, language, isRTL } = useTheme();
@@ -25,11 +21,8 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative pt-28 pb-20 md:pt-36 md:pb-5 overflow-hidden min-h-[92vh] flex flex-col justify-center">
-      <FloatingBackgroundIcons />
-
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
 
-        {/* Top Big Heading */}
         <div className="mb-8 sm:mb-12 animate-fade-in">
           {language === 'fa' ? (
             <h1 className="font-display font-extrabold text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight text-slate-900 dark:text-white uppercase leading-[1.2]">
@@ -42,9 +35,7 @@ export default function Hero() {
           )}
         </div>
 
-        {/* Magic UI Terminal - Live Code Developer Object with Floating Tech Icons closely around it */}
         <div className="relative max-w-xl mx-auto mb-12 px-3 sm:px-0 w-full animate-fade-in group">
-          {/* 1. React Icon (Top-Left Corner) */}
           <div className="absolute -top-4 -left-2 sm:-top-5 sm:-left-5 md:-left-6 z-20 pointer-events-none">
             <div
               className="animate-float-smooth-1 opacity-90 dark:opacity-85 hover:opacity-100 hover:scale-125 transition-all duration-300 pointer-events-auto select-none cursor-pointer drop-shadow-md"
@@ -59,7 +50,6 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* 2. JavaScript Icon (Top-Right Corner) */}
           <div className="absolute -top-4 -right-2 sm:-top-5 sm:-right-5 md:-right-6 z-20 pointer-events-none">
             <div
               className="animate-float-smooth-2 opacity-95 dark:opacity-90 hover:opacity-100 hover:scale-125 transition-all duration-300 pointer-events-auto select-none cursor-pointer drop-shadow-[0_0_12px_rgba(247,223,30,0.35)]"
@@ -74,7 +64,6 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* 3. HTML5 Icon (Top-Center) */}
           <div className="absolute -top-6 sm:-top-7 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
             <div
               className="animate-float-smooth-5 opacity-90 dark:opacity-85 hover:opacity-100 hover:scale-125 transition-all duration-300 pointer-events-auto select-none cursor-pointer drop-shadow-md"
@@ -89,7 +78,6 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* 4. Tailwind CSS Icon (Bottom-Left Corner) */}
           <div className="absolute -bottom-4 -left-2 sm:-bottom-5 sm:-left-5 md:-left-6 z-20 pointer-events-none">
             <div
               className="animate-float-smooth-3 opacity-90 dark:opacity-85 hover:opacity-100 hover:scale-125 transition-all duration-300 pointer-events-auto select-none cursor-pointer drop-shadow-md"
@@ -101,7 +89,6 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* 5. TypeScript Icon (Bottom-Right Corner) */}
           <div className="absolute -bottom-4 -right-2 sm:-bottom-5 sm:-right-5 md:-right-6 z-20 pointer-events-none">
             <div
               className="animate-float-smooth-4 opacity-95 dark:opacity-90 hover:opacity-100 hover:scale-125 transition-all duration-300 pointer-events-auto select-none cursor-pointer drop-shadow-[0_0_12px_rgba(56,189,248,0.35)]"
@@ -120,7 +107,6 @@ export default function Hero() {
             loopDelay={10000}
             className="shadow-2xl border-slate-700/60 bg-slate-950/90 dark:bg-[#0a0f1d]/95 backdrop-blur-md"
           >
-            {/* Line 1 */}
             <TypingAnimation
               lineNumber={1}
               duration={22}
@@ -132,7 +118,6 @@ export default function Hero() {
               ]}
             />
 
-            {/* Line 2 */}
             <TypingAnimation
               lineNumber={2}
               delay={120}
@@ -145,7 +130,6 @@ export default function Hero() {
               ]}
             />
 
-            {/* Line 3 */}
             <TypingAnimation
               lineNumber={3}
               delay={120}
@@ -158,7 +142,6 @@ export default function Hero() {
               ]}
             />
 
-            {/* Line 4 */}
             <TypingAnimation
               lineNumber={4}
               delay={120}
@@ -179,7 +162,6 @@ export default function Hero() {
               ]}
             />
 
-            {/* Line 5 */}
             <TypingAnimation
               lineNumber={5}
               delay={120}
@@ -196,7 +178,6 @@ export default function Hero() {
               ]}
             />
 
-            {/* Line 6 */}
             <TypingAnimation
               lineNumber={6}
               delay={120}
@@ -208,7 +189,6 @@ export default function Hero() {
           </Terminal>
         </div>
 
-        {/* Highlighted Code-Bracketed Description */}
         <div className="max-w-3xl mx-auto mb-5 px-2">
           {language === 'fa' ? (
             <p className="font-sans font-bold text-sm sm:text-base md:text-lg tracking-wide text-slate-900 dark:text-white leading-relaxed">
@@ -237,14 +217,11 @@ export default function Hero() {
           )}
         </div>
 
-        {/* Secondary Subtitle / Bio Description */}
         <p className="max-w-2xl mx-auto text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-8">
           {personal.tagline || personal.summary}
         </p>
 
-        {/* Primary Call-to-Action Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-4 mb-16">
-          {/* Main "My Resume" Mint Button */}
           <a
             href="#about"
             onClick={triggerConfetti}
@@ -254,7 +231,6 @@ export default function Hero() {
             <span>{t.hero.resumeBtn}</span>
           </a>
 
-          {/* Secondary Quick Contact Button */}
           <a
             href="#contact"
             className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-slate-200/80 hover:bg-slate-300 dark:bg-slate-800/80 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold text-sm border border-slate-300/80 dark:border-slate-700 transition-all hover:-translate-y-0.5"
@@ -263,7 +239,6 @@ export default function Hero() {
             <Send className="w-4 h-4 text-[#56e39f]" />
           </a>
 
-          {/* Explore Projects Button */}
           <a
             href="#projects"
             className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-transparent hover:bg-slate-200/50 dark:hover:bg-white/5 text-slate-700 dark:text-slate-300 font-semibold text-sm border border-slate-300 dark:border-slate-700/60 transition-all hover:-translate-y-0.5"

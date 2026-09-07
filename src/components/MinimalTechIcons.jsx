@@ -1,8 +1,6 @@
 import React from 'react';
 
-// Sleek, minimal tech icons inspired by the Hero floating icons
 export const MinimalTechIcons = {
-  // React (Sleek Atom with Central Node)
   React: (props) => (
     <svg className="w-5 h-5 text-[#61dafb]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" {...props}>
       <ellipse cx="12" cy="12" rx="10" ry="4.3" transform="rotate(0 12 12)" />
@@ -12,7 +10,6 @@ export const MinimalTechIcons = {
     </svg>
   ),
 
-  // TypeScript (Minimal Rounded Badge with TS)
   TypeScript: (props) => (
     <svg className="w-5 h-5" viewBox="0 0 48 48" fill="none" {...props}>
       <rect x="3" y="3" width="42" height="42" rx="11" stroke="#38bdf8" strokeWidth="3" fill="rgba(56, 189, 248, 0.12)" />
@@ -22,7 +19,6 @@ export const MinimalTechIcons = {
     </svg>
   ),
 
-  // JavaScript (Minimal Rounded Badge with JS)
   JavaScript: (props) => (
     <svg className="w-5 h-5" viewBox="0 0 48 48" fill="none" {...props}>
       <rect x="3" y="3" width="42" height="42" rx="11" stroke="#f7df1e" strokeWidth="3" fill="rgba(247, 223, 30, 0.12)" />
@@ -32,7 +28,6 @@ export const MinimalTechIcons = {
     </svg>
   ),
 
-  // HTML5 (Minimal Clean Geometric Shield)
   HTML: (props) => (
     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" {...props}>
       <path d="M4 3l1.6 15.5L12 21l6.4-2.5L20 3H4z" stroke="#e34f26" strokeWidth="1.8" strokeLinejoin="round" fill="rgba(227, 79, 38, 0.08)" />
@@ -40,7 +35,6 @@ export const MinimalTechIcons = {
     </svg>
   ),
 
-  // CSS3 (Minimal Clean Geometric Shield)
   CSS: (props) => (
     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" {...props}>
       <path d="M4 3l1.6 15.5L12 21l6.4-2.5L20 3H4z" stroke="#38bdf8" strokeWidth="1.8" strokeLinejoin="round" fill="rgba(56, 189, 248, 0.08)" />
@@ -48,14 +42,12 @@ export const MinimalTechIcons = {
     </svg>
   ),
 
-  // Tailwind CSS (Clean Fluid Wave Vector)
   Tailwind: (props) => (
     <svg className="w-5 h-5 text-[#38bdf8]" viewBox="0 0 24 24" fill="currentColor" {...props}>
       <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.975 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.975 12 6.001 12z" />
     </svg>
   ),
 
-  // Bootstrap (Minimal Rounded Badge with 'B')
   Bootstrap: (props) => (
     <svg className="w-5 h-5" viewBox="0 0 48 48" fill="none" {...props}>
       <rect x="3" y="3" width="42" height="42" rx="11" stroke="#a855f7" strokeWidth="3" fill="rgba(168, 85, 247, 0.12)" />
@@ -63,7 +55,6 @@ export const MinimalTechIcons = {
     </svg>
   ),
 
-  // Alpine.js (Minimal Geometric Folded Diamond)
   Alpine: (props) => (
     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" {...props}>
       <path d="M19.8 14.7l-4.5-4.5 4.5-4.5 3.4 3.4-3.4 5.6z" fill="#38bdf8" />
@@ -72,7 +63,6 @@ export const MinimalTechIcons = {
     </svg>
   ),
 
-  // Git (Minimal Branch & Commit Diamond)
   Git: (props) => (
     <svg className="w-5 h-5 text-[#f43f5e]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" {...props}>
       <rect x="3.5" y="3.5" width="17" height="17" rx="3.5" transform="rotate(45 12 12)" stroke="currentColor" fill="rgba(244, 63, 94, 0.08)" />

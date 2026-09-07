@@ -19,14 +19,6 @@ export function LinkedinIcon({ className = "w-4 h-4" }) {
   );
 }
 
-export function TwitterIcon({ className = "w-4 h-4" }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
-    </svg>
-  );
-}
-
 export function TelegramIcon({ className = "w-4 h-4" }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -48,15 +40,10 @@ export function SiteLogo({ className = "w-4 h-4", stroke = "currentColor", ...pr
       className={className}
       {...props}
     >
-      {/* Outer Triangle Apex */}
       <path d="M 250 80 L 100 420" strokeWidth="28" />
       <path d="M 250 80 L 400 420" strokeWidth="28" />
-
-      {/* Inner Parallel Legs */}
       <path d="M 250 180 L 145 420" strokeWidth="22" />
       <path d="M 250 180 L 355 420" strokeWidth="22" />
-
-      {/* Intersecting Arc Crossbar */}
       <path d="M 130 330 Q 250 370 370 330" strokeWidth="22" strokeLinecap="round" />
     </svg>
   );

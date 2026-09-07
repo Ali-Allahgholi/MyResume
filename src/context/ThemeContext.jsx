@@ -4,7 +4,7 @@ import { translations } from '../data/translations';
 
 const ThemeContext = createContext();
 
-export const ACCENT_COLORS = [
+const ACCENT_COLORS = [
   { id: 'mint', name: 'Mint Emerald (Default)', color: '#56e39f', border: 'border-emerald-400', bg: 'bg-[#56e39f]' },
   { id: 'cyan', name: 'Cyber Cyan', color: '#06b6d4', border: 'border-cyan-500', bg: 'bg-cyan-500' },
   { id: 'blue', name: 'Indigo Blue', color: '#3b82f6', border: 'border-blue-500', bg: 'bg-blue-500' },
@@ -15,24 +15,20 @@ export const ACCENT_COLORS = [
 ];
 
 export function ThemeProvider({ children }) {
-  // Theme: 'dark' | 'light' - default to dark
   const [theme, setTheme] = useState(() => {
     const saved = localStorage.getItem('cv_theme');
     if (saved) return saved;
     return 'dark';
   });
 
-  // Language: 'en' | 'fa' - default to English or saved preference
   const [language, setLanguage] = useState(() => {
     return localStorage.getItem('cv_lang') || 'en';
   });
 
-  // Accent Color
   const [accent, setAccent] = useState(() => {
     return localStorage.getItem('cv_accent') || 'mint';
   });
 
-  // Apply Theme class
   useEffect(() => {
     const root = document.documentElement;
     if (theme === 'dark') {
@@ -43,7 +39,6 @@ export function ThemeProvider({ children }) {
     localStorage.setItem('cv_theme', theme);
   }, [theme]);
 
-  // Apply Language & Direction
   useEffect(() => {
     const root = document.documentElement;
     root.setAttribute('lang', language);
@@ -51,7 +46,6 @@ export function ThemeProvider({ children }) {
     localStorage.setItem('cv_lang', language);
   }, [language]);
 
-  // Apply Accent attribute
   useEffect(() => {
     const root = document.documentElement;
     if (accent === 'blue') {

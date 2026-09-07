@@ -16,7 +16,6 @@ export default function Navbar() {
   const { theme, toggleTheme, cvData, language, toggleLanguage, t } = useTheme();
   const [activeSection, setActiveSection] = useState('home');
 
-  // Dynamic Navigation Items with Icons for mobile bottom bar
   const navItems = [
     { id: 'about', label: t.nav.about, href: '#about', icon: User },
     { id: 'experience', label: t.nav.experience, href: '#experience', icon: Briefcase },
@@ -24,7 +23,6 @@ export default function Navbar() {
     { id: 'contact', label: t.nav.contact, href: '#contact', icon: Send },
   ];
 
-  // Smooth scroll handler
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
     setActiveSection(targetId);
@@ -41,7 +39,6 @@ export default function Navbar() {
     }
   };
 
-  // Scroll spy to highlight active section automatically
   useEffect(() => {
     const sections = ['contact', 'projects', 'experience', 'about', 'home'];
 
@@ -78,42 +75,33 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Top Floating Header: Brand & Tools on Mobile; Full Bar on Desktop */}
       <header className="fixed top-0 left-0 right-0 z-40 no-print pointer-events-none py-2.5 sm:py-3.5 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 flex items-center justify-center">
-
-          {/* Top Navbar Capsule */}
           <nav
             className="pointer-events-auto relative flex items-center justify-between md:justify-center gap-1.5 sm:gap-2.5 md:gap-3 px-3 sm:px-3.5 py-1.5 rounded-full bg-white/90 dark:bg-[#12141a]/95 backdrop-blur-xl border border-slate-200/90 dark:border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.08)] dark:shadow-[0_12px_35px_rgba(0,0,0,0.45)] w-full md:w-auto max-w-[98vw] sm:max-w-none"
             aria-label="Main Navigation"
           >
-            {/* Brand: Name & Site Icon */}
             <a
               href="#home"
               onClick={(e) => handleNavClick(e, 'home')}
               className="relative flex items-center gap-1.5 sm:gap-2 group px-2 sm:px-2.5 py-1 rounded-full hover:bg-slate-100 dark:hover:bg-white/5 transition-all shrink-0 select-none cursor-pointer overflow-hidden"
               title={cvData.personal.fullName}
             >
-              {/* Site Icon watermark / backdrop glow behind the name/photo */}
               <div className="absolute inset-0 flex items-center justify-center opacity-45 dark:opacity-20 pointer-events-none overflow-hidden rounded-full">
                 <SiteLogo className="w-12 h-12 text-emerald-600 dark:text-[#56e39f] transform scale-150 rotate-3" />
               </div>
 
-              {/* Site Icon Foreground Badge */}
               <div className="relative w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-emerald-500/20 dark:bg-[#56e39f]/15 border border-emerald-600/40 dark:border-[#56e39f]/35 flex items-center justify-center text-emerald-700 dark:text-[#56e39f] shadow-sm group-hover:scale-105 group-hover:bg-emerald-500/30 dark:group-hover:bg-[#56e39f]/25 transition-all shrink-0">
                 <SiteLogo className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </div>
 
-              {/* Full Name */}
               <span className="relative font-display font-bold text-xs sm:text-[13px] md:text-sm text-black dark:text-white tracking-tight group-hover:text-emerald-600 dark:group-hover:text-[#56e39f] transition-colors whitespace-nowrap">
                 {cvData.personal.fullName}
               </span>
             </a>
 
-            {/* Desktop-only Vertical Divider */}
             <div className="hidden md:block w-[1px] h-4 sm:h-5 bg-slate-300 dark:bg-white/15 shrink-0" aria-hidden="true" />
 
-            {/* Desktop Navigation Items (Hidden on Mobile) */}
             <div className="hidden md:flex items-center gap-0.5 sm:gap-1 md:gap-1.5 shrink-0">
               {navItems.map((item) => {
                 const isActive = activeSection === item.id;
@@ -129,7 +117,6 @@ export default function Navbar() {
                   >
                     {item.label}
 
-                    {/* Glowing Active Indicator */}
                     {isActive && (
                       <>
                         <span
@@ -147,12 +134,9 @@ export default function Navbar() {
               })}
             </div>
 
-            {/* Desktop-only Vertical Divider */}
             <div className="hidden md:block w-[1px] h-4 sm:h-5 bg-slate-300 dark:bg-white/15 shrink-0" aria-hidden="true" />
 
-            {/* Quick Tools (Language Toggle & Theme Switcher) - Visible on Both Mobile & Desktop */}
             <div className="flex items-center gap-1 sm:gap-1.5 shrink-0">
-              {/* Bilingual Language Switcher Button */}
               <button
                 type="button"
                 onClick={toggleLanguage}
@@ -164,7 +148,6 @@ export default function Navbar() {
                 <span className="font-mono text-[11px] sm:text-xs font-bold text-black dark:text-neutral-200">{language === 'en' ? 'FA' : 'EN'}</span>
               </button>
 
-              {/* Quick Dark / Light Toggle */}
               <button
                 type="button"
                 onClick={toggleTheme}
@@ -179,12 +162,10 @@ export default function Navbar() {
                 )}
               </button>
             </div>
-
           </nav>
         </div>
       </header>
 
-      {/* Mobile Floating Bottom Navigation Bar (نویگیشن بار پایینی مخصوص موبایل) */}
       <nav
         className="fixed bottom-3 sm:bottom-4 left-0 right-0 z-40 md:hidden flex justify-center px-3 sm:px-4 pointer-events-none no-print"
         aria-label="Mobile Bottom Navigation"
@@ -204,7 +185,6 @@ export default function Navbar() {
                     : 'text-slate-600 hover:text-black dark:text-neutral-400 dark:hover:text-white font-medium'
                 }`}
               >
-                {/* Active indicator background pill */}
                 {isActive && (
                   <span
                     className="absolute inset-0 bg-emerald-500/15 dark:bg-[#56e39f]/15 rounded-2xl pointer-events-none"
@@ -223,7 +203,6 @@ export default function Navbar() {
                   {item.label}
                 </span>
 
-                {/* Subtle active dot */}
                 {isActive && (
                   <span
                     className="w-1 h-1 rounded-full bg-emerald-600 dark:bg-[#56e39f] shadow-[0_0_6px_#10b981] dark:shadow-[0_0_8px_#56e39f]"

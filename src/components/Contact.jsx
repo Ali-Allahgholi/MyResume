@@ -103,8 +103,6 @@ export default function Contact() {
   return (
     <section id="contact" className="py-16 sm:py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
           <div className="inline-flex items-center gap-1.5 px-3 py-0 rounded-full dark:bg-brand-950/50 text-brand-600 dark:text-brand-400 text-xl font-semibold uppercase tracking-wider mb-5">
             <Sparkles className="w-3.5 h-3.5" />
@@ -120,13 +118,8 @@ export default function Contact() {
           )}
         </div>
 
-        {/* Balanced 50/50 Two-Column Layout: Left & Right in Perfect Alignment */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-
-          {/* Left Column: Location & 4 Channel Rows */}
           <div className="flex flex-col justify-between space-y-4">
-
-            {/* Location & Availability Card */}
             <div className="glass-card rounded-3xl p-5 sm:p-6 border border-slate-200/80 dark:border-slate-800 shadow-xl shadow-slate-200/30 dark:shadow-none hover:border-emerald-500/40 transition-all">
               <div className="flex items-center justify-between gap-3 mb-3">
                 <div className="flex items-center gap-3">
@@ -143,7 +136,6 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Pulse Beacon */}
                 <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 shrink-0">
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
@@ -162,7 +154,6 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* 4 Sleek Horizontal Channel Rows (Email, Telegram, LinkedIn, GitHub) */}
             <div className="space-y-3">
               {contactChannels.map((channel) => {
                 const IconComponent = channel.icon;
@@ -173,7 +164,6 @@ export default function Contact() {
                     key={channel.id}
                     className="glass-card rounded-2xl p-3.5 sm:p-4 border border-slate-200/80 dark:border-slate-800 shadow-md hover:border-brand-500/40 transition-all flex items-center justify-between gap-3 group"
                   >
-                    {/* Left: Icon & Title + ID/Handle */}
                     <div className="flex items-center gap-3.5 min-w-0">
                       <div className={`w-10 h-10 rounded-2xl border flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-transform ${channel.iconBg}`}>
                         <IconComponent className="w-5 h-5" />
@@ -188,7 +178,6 @@ export default function Contact() {
                       </div>
                     </div>
 
-                    {/* Right: Copy & Visit Action Buttons */}
                     <div className="flex items-center gap-2 shrink-0">
                       <button
                         type="button"
@@ -221,13 +210,10 @@ export default function Contact() {
                 );
               })}
             </div>
-
           </div>
 
-          {/* Right Column: Send Message Form matching the left side in height & alignment */}
           <div className="h-full">
             <div className="glass-card rounded-3xl p-6 sm:p-8 border border-slate-200/80 dark:border-slate-800 shadow-xl shadow-slate-200/30 dark:shadow-none h-full flex flex-col justify-between space-y-6">
-
               <div className="space-y-1">
                 <h3 className="font-display font-bold text-xl text-slate-900 dark:text-white">
                   {t.contact.sendDirect}
@@ -249,7 +235,6 @@ export default function Contact() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4 flex-1 flex flex-col justify-between">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {/* Name */}
                     <div className="space-y-1.5">
                       <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
                         {t.contact.name} *
@@ -264,7 +249,6 @@ export default function Contact() {
                       />
                     </div>
 
-                    {/* Email */}
                     <div className="space-y-1.5">
                       <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
                         {t.contact.email} *
@@ -280,7 +264,6 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  {/* Subject */}
                   <div className="space-y-1.5">
                     <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
                       {t.contact.subject}
@@ -294,7 +277,6 @@ export default function Contact() {
                     />
                   </div>
 
-                  {/* Message */}
                   <div className="space-y-1.5">
                     <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
                       {t.contact.message} *
@@ -309,7 +291,6 @@ export default function Contact() {
                     />
                   </div>
 
-                  {/* Submit button */}
                   <button
                     type="submit"
                     className="w-full py-3.5 px-6 rounded-2xl bg-brand-500 hover:bg-brand-400 text-slate-950 font-bold text-sm sm:text-base flex items-center justify-center gap-2 shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer"
@@ -319,12 +300,9 @@ export default function Contact() {
                   </button>
                 </form>
               )}
-
             </div>
           </div>
-
         </div>
-
       </div>
     </section>
   );

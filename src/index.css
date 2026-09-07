@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* IRANSansX Web Fonts */
 @font-face {
   font-family: 'IRANSansX';
   src: local('IRANSansX'),
@@ -23,7 +22,6 @@
   font-display: swap;
 }
 
-/* Auto-apply IRANSansX when Persian (RTL) mode is active */
 [dir="rtl"] {
   font-family: 'IRANSansX', 'Vazirmatn', system-ui, -apple-system, sans-serif !important;
 }
@@ -41,7 +39,6 @@
 
 @layer base {
   :root {
-    /* Default Accent: Mint Green matching requested design */
     --brand-50: #ecfdf5;
     --brand-100: #d1fae5;
     --brand-200: #a7f3d0;
@@ -56,7 +53,6 @@
     --brand-glow: rgba(86, 227, 159, 0.45);
   }
 
-  /* Dynamic color theme classes */
   [data-accent="mint"] {
     --brand-50: #ecfdf5;
     --brand-100: #d1fae5;
@@ -167,7 +163,6 @@
   }
 }
 
-/* Custom Glassmorphism & Utilities */
 .glass-card {
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(12px);
@@ -182,25 +177,6 @@
   border: 1px solid rgba(255, 255, 255, 0.07);
 }
 
-.glass-nav {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
-}
-
-.dark .glass-nav {
-  background: rgba(13, 16, 20, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.glow-effect {
-  box-shadow: 0 0 35px -5px var(--brand-glow);
-}
-
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -226,7 +202,6 @@
   background: #475569;
 }
 
-/* Smooth organic floating animations for hero photo badges */
 @keyframes smoothFloat1 {
   0%, 100% {
     transform: translateY(0px);
@@ -297,7 +272,6 @@
   will-change: transform;
 }
 
-/* Print Stylesheet for ATS Resume */
 @media print {
   body {
     background: #ffffff !important;
@@ -306,13 +280,5 @@
 
   .no-print {
     display: none !important;
-  }
-
-  .print-only {
-    display: block !important;
-  }
-
-  .page-break {
-    page-break-after: always;
   }
 }

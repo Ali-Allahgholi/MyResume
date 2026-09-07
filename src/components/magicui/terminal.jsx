@@ -4,7 +4,6 @@ import React, {
   useContext,
   useEffect,
   useMemo,
-  useRef,
   useState,
 } from 'react';
 import { cn } from '../../lib/utils';
@@ -65,9 +64,7 @@ export function TypingAnimation({
   const itemIndex = useItemIndex();
   const [charCount, setCharCount] = useState(0);
   const [isTyping, setIsTyping] = useState(false);
-  const [isCompleted, setIsCompleted] = useState(false);
 
-  // Compute total text length
   const totalLength = useMemo(() => {
     if (tokens && Array.isArray(tokens)) {
       return tokens.reduce((acc, t) => acc + (t.text ? t.text.length : 0), 0);
@@ -80,7 +77,6 @@ export function TypingAnimation({
 
   useEffect(() => {
     if (!sequence || itemIndex === null) {
-      // Standalone mode
       const startTimer = setTimeout(() => setIsTyping(true), delay);
       return () => clearTimeout(startTimer);
     }
@@ -104,7 +100,6 @@ export function TypingAnimation({
       } else {
         clearInterval(interval);
         setIsTyping(false);
-        setIsCompleted(true);
         if (sequence && itemIndex !== null) {
           sequence.completeItem(itemIndex);
         }
@@ -114,12 +109,10 @@ export function TypingAnimation({
     return () => clearInterval(interval);
   }, [isTyping, totalLength, duration, sequence, itemIndex]);
 
-  // Don't render if sequence hasn't reached this item yet
   if (sequence && itemIndex !== null && sequence.activeIndex < itemIndex) {
     return null;
   }
 
-  // Render tokens or plain text up to charCount
   let content = null;
   if (tokens && Array.isArray(tokens)) {
     let accumulated = 0;
@@ -174,7 +167,6 @@ export function Terminal({
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [key, setKey] = useState(0);
-  // clearPhase: 'idle' (displaying) | 'prompt_clear' (shows > clear) | 'fading' (smooth dissolve)
   const [clearPhase, setClearPhase] = useState('idle');
   const [isHovered, setIsHovered] = useState(false);
 
@@ -198,21 +190,17 @@ export function Terminal({
   const totalItems = Children.count(children);
   const isSequenceFinished = activeIndex >= totalItems;
 
-  // Continuous smooth loop effect
   useEffect(() => {
     if (!loop || !sequence || totalItems === 0) return;
     if (isSequenceFinished) {
       if (isHovered && pauseOnHover) return;
 
-      // Phase 1: Wait 4.5s so user can comfortably read the completed terminal
       const holdTimer = setTimeout(() => {
         setClearPhase('prompt_clear');
 
-        // Phase 2: Show '> clear' command for 700ms
         const fadeTimer = setTimeout(() => {
           setClearPhase('fading');
 
-          // Phase 3: Dissolve smoothly over 600ms, then reset cleanly
           const resetTimer = setTimeout(() => {
             setActiveIndex(0);
             setKey((prev) => prev + 1);
@@ -251,7 +239,6 @@ export function Terminal({
         )}
         dir="ltr"
       >
-        {/* Top macOS-style Terminal Header */}
         <div className="flex items-center justify-between px-4 py-3 border-b border-slate-800 bg-slate-950/70 select-none">
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-[#ff5f56] border border-[#e0443e]/40 shadow-sm" />
@@ -284,7 +271,6 @@ export function Terminal({
           </button>
         </div>
 
-        {/* Terminal Content Box with Stable Fixed Height */}
         <div className="p-4 sm:p-5 text-slate-100 overflow-x-auto min-h-[250px] sm:min-h-[240px] font-mono leading-relaxed relative flex flex-col justify-start">
           <div
             className={cn(
@@ -296,7 +282,6 @@ export function Terminal({
           >
             {wrappedChildren}
 
-            {/* Simulated '> clear' prompt before wiping screen */}
             {clearPhase === 'prompt_clear' && (
               <div className="flex items-center text-[#56e39f] font-mono text-xs sm:text-[13px] pt-1 animate-fade-in">
                 <span>&gt; clear</span>

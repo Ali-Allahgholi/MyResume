@@ -26,8 +26,6 @@ export default function About() {
   return (
     <section id="about" className="py-10 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <div className="inline-flex items-center gap-1.5 px-3 py-0 rounded-full dark:bg-brand-950/50 text-brand-600 dark:text-brand-400 text-xl font-semibold uppercase tracking-wider mb-5">
             <User className="w-3.5 h-3.5" />
@@ -41,10 +39,7 @@ export default function About() {
           </p>
         </div>
 
-        {/* Main Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-
-          {/* Left Column: Detailed Bio & Philosophy */}
           <div className="lg:col-span-7 space-y-6">
             <div className="glass-card rounded-3xl p-6 sm:p-8 space-y-5">
               <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
@@ -62,10 +57,8 @@ export default function About() {
                 </div>
               </div>
             </div>
-
-
           </div>
-          {/* Right Column: Skills */}
+
           <div className="lg:col-span-5 space-y-6">
             <div className="glass-card rounded-3xl p-6 sm:p-7 space-y-5 border border-slate-200/80 dark:border-slate-800 shadow-xl shadow-slate-200/30 dark:shadow-none">
               <div className="flex items-center justify-between">
@@ -111,9 +104,7 @@ export default function About() {
               </div>
             </div>
           </div>
-
         </div>
-
       </div>
     </section>
   );
