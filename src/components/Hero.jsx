@@ -1,23 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import {
   ArrowRight,
   Send,
 } from 'lucide-react';
-import confetti from 'canvas-confetti';
 import { Terminal, TypingAnimation } from './magicui/terminal';
+import ResumeModal from './ResumeModal';
 
 export default function Hero() {
   const { cvData, t, language, isRTL } = useTheme();
   const { personal } = cvData;
-
-  const triggerConfetti = () => {
-    confetti({
-      particleCount: 150,
-      spread: 80,
-      origin: { y: 0.6 }
-    });
-  };
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
 
   return (
     <section id="home" className="relative pt-28 pb-20 md:pt-36 md:pb-5 overflow-hidden min-h-[92vh] flex flex-col justify-center">
@@ -222,14 +215,14 @@ export default function Hero() {
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4 mb-16">
-          <a
-            href="#about"
-            onClick={triggerConfetti}
+          <button
+            type="button"
+            onClick={() => setIsResumeOpen(true)}
             className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#56e39f] hover:bg-[#48e59b] text-[#0d130f] font-bold text-sm sm:text-base shadow-lg shadow-[#56e39f]/25 hover:shadow-xl hover:shadow-[#56e39f]/40 hover:-translate-y-0.5 active:translate-y-0 active:scale-95 transition-all cursor-pointer"
             title={t.hero.resumeBtn}
           >
             <span>{t.hero.resumeBtn}</span>
-          </a>
+          </button>
 
           <a
             href="#contact"
@@ -248,6 +241,11 @@ export default function Hero() {
           </a>
         </div>
       </div>
+
+      <ResumeModal
+        isOpen={isResumeOpen}
+        onClose={() => setIsResumeOpen(false)}
+      />
     </section>
   );
 }

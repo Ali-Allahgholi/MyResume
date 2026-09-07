@@ -63,6 +63,14 @@ export const translations = {
     footer: {
       backToTop: "Back to top",
     },
+    modal: {
+      resumeTitle: "Ali Allahgholi — Resume",
+      downloadPdf: "Download PDF",
+      openNewTab: "Open in New Tab",
+      print: "Print",
+      close: "Close",
+      pageBadge: "Official CV • 1 Page",
+    },
   },
   fa: {
     nav: {
@@ -127,6 +135,14 @@ export const translations = {
     },
     footer: {
       backToTop: "بازگشت به بالا",
+    },
+    modal: {
+      resumeTitle: "علی الله‌قلی — رزومه رسمی",
+      downloadPdf: "دانلود PDF",
+      openNewTab: "باز کردن در تب جدید",
+      print: "چاپ رزومه",
+      close: "بستن",
+      pageBadge: "رزومه رسمی • ۱ صفحه",
     },
   },
 };
