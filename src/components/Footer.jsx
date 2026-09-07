@@ -34,11 +34,8 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="text-center text-xs text-slate-500 dark:text-slate-400 space-y-1">
-            <p className="flex items-center justify-center gap-1">
-              <span>{t.footer.builtWith}</span>
-            </p>
-            <p>© {new Date().getFullYear()} Ali Allahgholi . {t.footer.allRights}</p>
+          <div className="text-center text-xs text-slate-500 dark:text-slate-400">
+            <p>© Ali Allahgholi | All Rights Reserved</p>
           </div>
 
           <div className="flex items-center gap-3">

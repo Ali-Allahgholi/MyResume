@@ -61,9 +61,7 @@ export const translations = {
       successMsg: "Your message was sent successfully! I will respond promptly.",
     },
     footer: {
-      builtWith: "Built with React & Tailwind CSS",
       backToTop: "Back to top",
-      allRights: "All rights reserved.",
     },
   },
   fa: {
@@ -128,9 +126,7 @@ export const translations = {
       successMsg: "پیام شما با موفقیت ارسال شد! در اسرع وقت پاسخ خواهم داد.",
     },
     footer: {
-      builtWith: "توسعه‌یافته با React و Tailwind CSS",
       backToTop: "بازگشت به بالا",
-      allRights: "تمامی حقوق محفوظ است.",
     },
   },
 };
